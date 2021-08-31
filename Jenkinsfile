@@ -1,6 +1,6 @@
 pipeline {
   environment {
-    registry = "riteshk0398/calculator"
+    registry = "misbah012/calculator"
     registryCredential = 'dockerhub'
 
 
@@ -11,9 +11,9 @@ pipeline {
       steps{
         sh "printenv"
         
-        sh "docker build -t riteshk03/calculator:$BUILD_ID-$BRANCH_NAME ." 
+        sh "docker build -t misbah012/calculator:$BUILD_ID-$BRANCH_NAME ." 
         //sh "docker run -dp 80:80 riteshk03/calculator:$BUILD_ID-$BRANCH_NAME"
-        sh "docker push riteshk03/calculator:$BUILD_ID-$BRANCH_NAME"
+        sh "docker push misbah012/calculator:$BUILD_ID-$BRANCH_NAME"
       }
     }
     stage('Creating Deployment') {
